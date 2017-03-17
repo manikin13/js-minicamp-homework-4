@@ -1,0 +1,6 @@
+Callback functions: A function that is called as an argument for another function.
+Closure: A variable available to an internal function buy the function knowing its environment.
+Arguments Array: A variable similar to an array but with only the length method available.
+Recursion: A function that calls itself inside the function - can create infinite loops.
+prototype: The base settings of an object. All properties of the prototype are inherited by the object.
+Constructors: Constructor is a property that refers back to the original object.
