@@ -129,6 +129,20 @@ function cacheFunction(cb) {
 	//if the function you return is invoked with 5 it would pass 5 to cb(5) and return 25
 	//if the function you return is invoked again with 5 it will look on an object in the closure scope
 	//and return 25 directly and will not invoke cb again
+	var cache = {}; // creates the cache outside the function
+	return function () {
+		// assign checkArgument to single argument (use a loop if unkown number of arguements)
+		var checkArgument = arguments[0];
+		// use hasOwnProperty (boolean true if value exists)
+		if (cache.hasOwnProperty(checkArgument)){
+			// returns cached value isntead of using callback function
+			return cache[checkArgument];
+		}
+		// stores callback Functions result in cache and returs the value
+		cache[checkArgument] = cb(checkArgument);
+		return cache[checkArgument];
+	};
+
 }
 
 
